@@ -1,5 +1,6 @@
 --- Валидация имени хоста
 --
+-- @module validateHostname
 local utf8 = require 'utf8'
 local validateHostname
 
@@ -7,8 +8,11 @@ local RU_LETTERS = 'абвгдеёжзийклмнопрстуфхцчшщъыь
 
 --- Проверяет на корректность имени хоста
 --
--- @param hostname Строка имя хоста
+-- @param hostname (string) Строка имя хоста
 -- @return valid Корректен ли хост
+-- @usage
+  -- local valid = validateHostname('antibot.ru')
+  -- print(valid) -- true
 function validateHostname(hostname)
   if type(hostname) ~= 'string' or utf8.len(hostname) >= 255 then
     return false

@@ -23,7 +23,7 @@ tar cvzf "${package}.tar.gz" "${package}/"
 
 echo "Packing source rock..."
 
-sh /home/uriid1/antibot/repositories/tools/tools/01-luarocks/bin/luarocks pack "${package}.rockspec"
+luarocks pack "${package}.rockspec"
 
 echo "Cleanig working directory..."
 
